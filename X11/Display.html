@@ -265,6 +265,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/TamasSzekeres/x11-cr/X11/Color" data-name="x11::color">
+      <a href="../X11/Color.html">Color</a>
+      
+    </li>
+  
   <li class=" current" data-id="github.com/TamasSzekeres/x11-cr/X11/Display" data-name="x11::display">
       <a href="../X11/Display.html">Display</a>
       
@@ -275,6 +280,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/TamasSzekeres/x11-cr/X11/GCValues" data-name="x11::gcvalues">
+      <a href="../X11/GCValues.html">GCValues</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/TamasSzekeres/x11-cr/X11/Image" data-name="x11::image">
       <a href="../X11/Image.html">Image</a>
       
@@ -282,6 +292,11 @@
   
   <li class=" " data-id="github.com/TamasSzekeres/x11-cr/X11/ModifierKeymap" data-name="x11::modifierkeymap">
       <a href="../X11/ModifierKeymap.html">ModifierKeymap</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/TamasSzekeres/x11-cr/X11/SetWindowAttributes" data-name="x11::setwindowattributes">
+      <a href="../X11/SetWindowAttributes.html">SetWindowAttributes</a>
       
     </li>
   
@@ -333,7 +348,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L6" target="_blank">x11/display.cr</a>
+      <a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L6" target="_blank">x11/display.cr</a>
     
     <br/>
   
@@ -367,9 +382,26 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#gc_context_from_gc%28gc%3AX11%3A%3AC%3A%3AGC%29%3AX11%3A%3AC%3A%3AGC-class-method" class="signature"><strong>.gc_context_from_gc</strong>(gc : X11::C::GC) : X11::C::GC</a>
+        
+          <div class="summary"><p>Returns GC-context from GC.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#init_threads%3AX11%3A%3AC%3A%3AStatus-class-method" class="signature"><strong>.init_threads</strong> : X11::C::Status</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#keysym_to_string%28keysym%3AX11%3A%3AC%3A%3AKeySym%29%3AString-class-method" class="signature"><strong>.keysym_to_string</strong>(keysym : X11::C::KeySym) : String</a>
         
-          <div class="summary"><h1>Arguments - <strong>keysym</strong> Specifies the <code>X::C::KeySym</code> that is to be converted.</h1></div>
+          <div class="summary"><p>Return ther string representation of a given <em>keysym</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#string_to_keysym%28string%3AString%29%3AX11%3A%3AC%3A%3AKeySym-class-method" class="signature"><strong>.string_to_keysym</strong>(string : String) : X11::C::KeySym</a>
         
       </li>
     
@@ -405,9 +437,79 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#create_simple_window%28parent%2Cx%2Cy%2Cwidth%2Cheight%2Cborder_width%2Cborder%2Cbackground%29-instance-method" class="signature"><strong>#create_simple_window</strong>(parent, x, y, width, height, border_width, border, background)</a>
+        <a href="#copy_colormap_and_free%28colormap%3AX11%3A%3AC%3A%3AColormap%29%3AX11%3A%3AC%3A%3AColormap-instance-method" class="signature"><strong>#copy_colormap_and_free</strong>(colormap : X11::C::Colormap) : X11::C::Colormap</a>
         
-          <div class="summary"><p>The create_simple_window function creates an unmapped InputOutput subwindow for a specified parent window, returns the window ID of the created window, and causes the X server to generate a CreateNotify event.</p></div>
+          <div class="summary"><p>Creates a colormap</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_bitmap_from_data%28d%3ADrawable%2Cdata%3ABytes%2Cwidth%3AUInt32%2Cheight%3AUInt32%29%3APixmap-instance-method" class="signature"><strong>#create_bitmap_from_data</strong>(d : Drawable, data : Bytes, width : UInt32, height : UInt32) : Pixmap</a>
+        
+          <div class="summary"><p>Creates a pixmap from data.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_colormap%28w%3AX11%3A%3AC%3A%3AWindow%2Cvisual%3AVisual%2Calloc%3AInt32%29%3AX11%3A%3AC%3A%3AColormap-instance-method" class="signature"><strong>#create_colormap</strong>(w : X11::C::Window, visual : Visual, alloc : Int32) : X11::C::Colormap</a>
+        
+          <div class="summary"><p>Creates a colormap</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_font_cursor%28shape%3AUInt32%29%3AX11%3A%3AC%3A%3ACursor-instance-method" class="signature"><strong>#create_font_cursor</strong>(shape : UInt32) : X11::C::Cursor</a>
+        
+          <div class="summary"><p>Creates a cursor.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_gc%28d%3ADrawable%2Cvaluemask%3AUInt64%2Cvalues%3AGCValues%29%3AX11%3A%3AX%3A%3AGC-instance-method" class="signature"><strong>#create_gc</strong>(d : Drawable, valuemask : UInt64, values : GCValues) : X11::X::GC</a>
+        
+          <div class="summary"><p>Creates a graphics context.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_glyph_cursor%28source_font%3AX11%3A%3AC%3A%3AFont%2Cmask_font%3AX11%3A%3AC%3A%3AFont%2Csource_char%3AUInt32%2Cmask_char%3AUInt32%2Cforeground_color%3AColor%2Cbackground_color%3AColor%29%3AX11%3A%3AC%3A%3ACursor-instance-method" class="signature"><strong>#create_glyph_cursor</strong>(source_font : X11::C::Font, mask_font : X11::C::Font, source_char : UInt32, mask_char : UInt32, foreground_color : Color, background_color : Color) : X11::C::Cursor</a>
+        
+          <div class="summary"><p>Creates a cursor.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_pixmap%28d%3ADrawable%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cdepth%3AUInt32%29%3APixmap-instance-method" class="signature"><strong>#create_pixmap</strong>(d : Drawable, width : UInt32, height : UInt32, depth : UInt32) : Pixmap</a>
+        
+          <div class="summary"><p>Creates a pixmap.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_pixmap_cursor%28source%3AX11%3A%3AC%3A%3APixmap%2Cmask%3AX11%3A%3AC%3A%3APixmap%2Cforeground_color%3AColor%2Cbackground_color%3AColor%2Cx%3AUInt32%2Cy%3AUInt32%29%3AX11%3A%3AC%3A%3ACursor-instance-method" class="signature"><strong>#create_pixmap_cursor</strong>(source : X11::C::Pixmap, mask : X11::C::Pixmap, foreground_color : Color, background_color : Color, x : UInt32, y : UInt32) : X11::C::Cursor</a>
+        
+          <div class="summary"><p>Creates a cursor.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_pixmap_from_bitmap_data%28d%3ADrawable%2Cdata%3ABytes%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cfg%3AUInt64%2Cbg%3AUInt64%2Cdepth%3AUInt64%29%3APixmap-instance-method" class="signature"><strong>#create_pixmap_from_bitmap_data</strong>(d : Drawable, data : Bytes, width : UInt32, height : UInt32, fg : UInt64, bg : UInt64, depth : UInt64) : Pixmap</a>
+        
+          <div class="summary"><p>Creates a pixmap.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_simple_window%28parent%3AWindow%2Cx%3AInt32%2Cy%3AInt32%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cborder_width%3AUInt32%2Cborder%3AUInt64%2Cbackground%3AUInt64%29%3AWindow-instance-method" class="signature"><strong>#create_simple_window</strong>(parent : Window, x : Int32, y : Int32, width : UInt32, height : UInt32, border_width : UInt32, border : UInt64, background : UInt64) : Window</a>
+        
+          <div class="summary"><p>Creates an unmapped subwindow.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_window%28parent%3AWindow%2Cx%3AInt32%2Cy%3AInt32%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cborder_width%3AUInt32%2Cdepth%3AInt32%2Cc_class%3AUInt32%2Cvisual%3AVisual%2Cvaluemask%3AUInt64%2Cattributes%3ASetWindowAttributes%29%3AWindow-instance-method" class="signature"><strong>#create_window</strong>(parent : Window, x : Int32, y : Int32, width : UInt32, height : UInt32, border_width : UInt32, depth : Int32, c_class : UInt32, visual : Visual, valuemask : UInt64, attributes : SetWindowAttributes) : Window</a>
+        
+          <div class="summary"><p>Creates a window.</p></div>
         
       </li>
     
@@ -451,6 +553,16 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#extended_map_request_size%3AInt64-instance-method" class="signature"><strong>#extended_map_request_size</strong> : Int64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#extensions%3AArray%28String%29-instance-method" class="signature"><strong>#extensions</strong> : Array(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#fetch_buffer%28buffer%3AInt32%29%3AString-instance-method" class="signature"><strong>#fetch_buffer</strong>(buffer : Int32) : String</a>
         
           <div class="summary"><p>Returns data from a specified cut buffer.</p></div>
@@ -470,6 +582,28 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#flush_gc%28gc%3AX11%3A%3AC%3A%3AGC%29-instance-method" class="signature"><strong>#flush_gc</strong>(gc : X11::C::GC)</a>
+        
+          <div class="summary"><p>Forces GC component change.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#font_path%3AArray%28String%29-instance-method" class="signature"><strong>#font_path</strong> : Array(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fonts%28pattern%3AString%2Cmaxnames%3AInt32%29%3AArray%28String%29-instance-method" class="signature"><strong>#fonts</strong>(pattern : String, maxnames : Int32) : Array(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fonts_with_info%28pattern%3AString%2Cmaxnames%3AInt32%29%3AArray%28String%29-instance-method" class="signature"><strong>#fonts_with_info</strong>(pattern : String, maxnames : Int32) : Array(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#get_image%28d%3AX11%3A%3AC%3A%3ADrawable%2Cx%3AInt32%2Cy%3AInt32%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cplane_mask%3AUInt64%2Cformat%3AInt32%29%3AImage-instance-method" class="signature"><strong>#get_image</strong>(d : X11::C::Drawable, x : Int32, y : Int32, width : UInt32, height : UInt32, plane_mask : UInt64, format : Int32) : Image</a>
         
           <div class="summary"><p>This function specifically supports rudimentary screen dumps.</p></div>
@@ -484,16 +618,53 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#hosts%3AArray%28HostAddress%29-instance-method" class="signature"><strong>#hosts</strong> : Array(HostAddress)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#installed_colormaps%28w%3AWindow%29%3AArray%28Colormap%29-instance-method" class="signature"><strong>#installed_colormaps</strong>(w : Window) : Array(Colormap)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#intern_atom%28atom_name%3AString%2Conly_if_exists%3ABool%29-instance-method" class="signature"><strong>#intern_atom</strong>(atom_name : String, only_if_exists : Bool)</a>
         
-          <div class="summary"><h1>Arguments - <strong>display</strong> Specifies the connection to the X server.</h1></div>
+          <div class="summary"><p>Returns the atom identifier.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#keyboard_mapping%28first_keycode%3AX11%3A%3AC%3A%3AKeyCode%2Ckeycode_count%3AInt32%29%3AArray%28KeySym%29-instance-method" class="signature"><strong>#keyboard_mapping</strong>(first_keycode : X11::C::KeyCode, keycode_count : Int32) : Array(KeySym)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#keycode_to_keysym%28keycode%3AX11%3A%3AC%3A%3AKeyCode%2Cindex%3AInt32%29%3AX11%3A%3AC%3A%3AKeySym-instance-method" class="signature"><strong>#keycode_to_keysym</strong>(keycode : X11::C::KeyCode, index : Int32) : X11::C::KeySym</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#load_font%28name%3AString%29%3AX11%3A%3AX%3A%3AFont-instance-method" class="signature"><strong>#load_font</strong>(name : String) : X11::X::Font</a>
+        
+          <div class="summary"><p>Loads the specified font</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#load_query_font%28name%3AString%29%3AFontStruct-instance-method" class="signature"><strong>#load_query_font</strong>(name : String) : FontStruct</a>
         
-          <div class="summary"><p>The load_query_font function provides the most common way for accessing a font.</p></div>
+          <div class="summary"><p>The <code><a href="../X11/Display.html#load_query_font%28name%3AString%29%3AFontStruct-instance-method">#load_query_font</a></code> function provides the most common way for accessing a font.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#lock-instance-method" class="signature"><strong>#lock</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#lookup_keysym%28key_event%3AKeyEvent%2Cindex%3AInt32%29%3AX11%3A%3AC%3A%3AKeySym-instance-method" class="signature"><strong>#lookup_keysym</strong>(key_event : KeyEvent, index : Int32) : X11::C::KeySym</a>
         
       </li>
     
@@ -503,9 +674,19 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#max_request_size%3AInt64-instance-method" class="signature"><strong>#max_request_size</strong> : Int64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#modifier_mapping%3AModifierKeymap-instance-method" class="signature"><strong>#modifier_mapping</strong> : ModifierKeymap</a>
         
           <div class="summary"><p>Returns a newly created <em>ModifierKeymap</em> object that contains the keys being used as modifiers.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#motion_buffer_size%3AUInt64-instance-method" class="signature"><strong>#motion_buffer_size</strong> : UInt64</a>
         
       </li>
     
@@ -527,9 +708,19 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#properties%28w%3AX11%3A%3AC%3A%3AWindow%29%3AArray%28Atom%7CX11%3A%3AC%3A%3AAtom%29-instance-method" class="signature"><strong>#properties</strong>(w : X11::C::Window) : Array(Atom | X11::C::Atom)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#query_font%28font_id%3AX11%3A%3AC%3A%3AXID%29%3AFontStruct-instance-method" class="signature"><strong>#query_font</strong>(font_id : X11::C::XID) : FontStruct</a>
         
-          <div class="summary"><p>The query_font function returns a FontStruct object, which contains information associated with the font.</p></div>
+          <div class="summary"><p>The <code><a href="../X11/Display.html#query_font%28font_id%3AX11%3A%3AC%3A%3AXID%29%3AFontStruct-instance-method">#query_font</a></code> function returns a <code><a href="../X11/FontStruct.html">FontStruct</a></code> object, which contains information associated with the font.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resource_manager_string%3AString-instance-method" class="signature"><strong>#resource_manager_string</strong> : String</a>
         
       </li>
     
@@ -544,12 +735,31 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#selection_owner%28selection%3AAtom%7CX11%3A%3AC%3A%3AAtom%29%3AWindow-instance-method" class="signature"><strong>#selection_owner</strong>(selection : Atom | X11::C::Atom) : Window</a>
+        
+          <div class="summary"><p>Returns the selection owner.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#set_wm_protocols%28w%3AWindow%2Cprotocols%3APAtom%2Ccount%3AInt32%29-instance-method" class="signature"><strong>#set_wm_protocols</strong>(w : Window, protocols : PAtom, count : Int32)</a>
         
       </li>
     
       <li class="entry-summary">
         <a href="#store_name%28w%3AWindow%2Cname%3AString%29%3AInt32-instance-method" class="signature"><strong>#store_name</strong>(w : Window, name : String) : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_unsafe%3AX11%3A%3AC%3A%3AX%3A%3APDisplay-instance-method" class="signature"><strong>#to_unsafe</strong> : X11::C::X::PDisplay</a>
+        
+          <div class="summary"><p>Pointer to the underlieing XDisplay object.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unlock-instance-method" class="signature"><strong>#unlock</strong></a>
         
       </li>
     
@@ -601,12 +811,12 @@
       
         <div class="doc"><p>Opens a connection to the X server that controls a display.</p>
 
-<h1>Arguments</h1>
+<h3>Arguments</h3>
 
 <ul><li><strong>name</strong> Specifies the hardware display name, which determines the display and communications domain to be used.
 On a <code>POSIX</code>-conformant system, if the <code>name</code> is <em>nil</em>, it defaults to the value of the <code>DISPLAY</code> environment variable.</li></ul>
 
-<h1>Description</h1>
+<h3>Description</h3>
 
 <p>The encoding and interpretation of the display name is implementation dependent.
 Strings in the <code>Host Portable Character Encoding</code> are supported;
@@ -628,7 +838,7 @@ For example, the following would specify screen 1 of display 0 on the machine na
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -648,11 +858,11 @@ For example, the following would specify screen 1 of display 0 on the machine na
       
         <div class="doc"><p>Returns the name of the display.</p>
 
-<h1>Arguments</h1>
+<h3>Arguments</h3>
 
 <ul><li><strong>string</strong> Specifies the character string.</li></ul>
 
-<h1>Description</h1>
+<h3>Description</h3>
 
 <p>The <code><a href="../X11/Display.html#display_name%28string%3AString%3F%29%3AString-class-method">.display_name</a></code> function returns the name of the display that <code>new</code> would attempt to use. If a <strong>nil</strong> string is specified,
 <code><a href="../X11/Display.html#display_name%28string%3AString%3F%29%3AString-class-method">.display_name</a></code> looks in the environment for the display and returns the display name that <code>new</code> would attempt to use.
@@ -661,7 +871,45 @@ This makes it easier to report to the user precisely which display the program a
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L265" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L267" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="gc_context_from_gc&#40;gc:X11::C::GC&#41;:X11::C::GC-class-method">
+      <div class="signature">
+        
+        def self.<strong>gc_context_from_gc</strong>(gc : X11::C::GC) : X11::C::GC
+
+        <a class="method-permalink" href="#gc_context_from_gc%28gc%3AX11%3A%3AC%3A%3AGC%29%3AX11%3A%3AC%3A%3AGC-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns GC-context from GC.</p>
+
+<h3>Arguments</h3>
+
+<ul><li><strong>gc</strong> Specifies the GC for which you want the resource ID.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L556" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="init_threads:X11::C::Status-class-method">
+      <div class="signature">
+        
+        def self.<strong>init_threads</strong> : X11::C::Status
+
+        <a class="method-permalink" href="#init_threads%3AX11%3A%3AC%3A%3AStatus-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L824" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -674,11 +922,13 @@ This makes it easier to report to the user precisely which display the program a
         <a class="method-permalink" href="#keysym_to_string%28keysym%3AX11%3A%3AC%3A%3AKeySym%29%3AString-class-method">#</a>
       </div>
       
-        <div class="doc"><h1>Arguments</h1>
+        <div class="doc"><p>Return ther string representation of a given <em>keysym</em>.</p>
+
+<h3>Arguments</h3>
 
 <ul><li><strong>keysym</strong> Specifies the <code>X::C::KeySym</code> that is to be converted.</li></ul>
 
-<h1>Description</h1>
+<h3>Description</h3>
 
 <p>The returned string is in a static area and must not be modified.
 The returned string is in the Host Portable Character Encoding.
@@ -687,7 +937,23 @@ If the specified <code><a href="../X11/C/KeySym.html">KeySym</a></code> is not d
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L284" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L288" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="string_to_keysym&#40;string:String&#41;:X11::C::KeySym-class-method">
+      <div class="signature">
+        
+        def self.<strong>string_to_keysym</strong>(string : String) : <a href="../X11/C/KeySym.html">X11::C::KeySym</a>
+
+        <a class="method-permalink" href="#string_to_keysym%28string%3AString%29%3AX11%3A%3AC%3A%3AKeySym-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L796" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -707,24 +973,24 @@ If the specified <code><a href="../X11/C/KeySym.html">KeySym</a></code> is not d
       
         <div class="doc"><p>Returns the name associated with the specified atom.</p>
 
-<h1>Arguments</h1>
+<h3>Arguments</h3>
 
 <ul><li><strong>atom</strong> Specifies the atom for the property name you want returned.</li></ul>
 
-<h1>Description</h1>
+<h3>Description</h3>
 
 <p>If the data returned by the server is in the Latin Portable Character Encoding,
 then the returned string is in the Host Portable Character Encoding.
 Otherwise, the result is implementation dependent.</p>
 
-<h1>Diagnostics</h1>
+<h3>Diagnostics</h3>
 
 <ul><li><strong>BadAtom</strong> A value for an <code><a href="../X11/Atom.html">Atom</a></code> argument does not name a defined <code><a href="../X11/Atom.html">Atom</a></code>.</li></ul></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L211" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L213" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -742,7 +1008,7 @@ Otherwise, the result is implementation dependent.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L219" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L221" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -758,7 +1024,7 @@ Otherwise, the result is implementation dependent.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L377" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L888" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -774,31 +1040,485 @@ Otherwise, the result is implementation dependent.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_simple_window&#40;parent,x,y,width,height,border_width,border,background&#41;-instance-method">
+    <div class="entry-detail" id="copy_colormap_and_free&#40;colormap:X11::C::Colormap&#41;:X11::C::Colormap-instance-method">
       <div class="signature">
         
-        def <strong>create_simple_window</strong>(parent, x, y, width, height, border_width, border, background)
+        def <strong>copy_colormap_and_free</strong>(colormap : <a href="../X11/C/Colormap.html">X11::C::Colormap</a>) : <a href="../X11/C/Colormap.html">X11::C::Colormap</a>
 
-        <a class="method-permalink" href="#create_simple_window%28parent%2Cx%2Cy%2Cwidth%2Cheight%2Cborder_width%2Cborder%2Cbackground%29-instance-method">#</a>
+        <a class="method-permalink" href="#copy_colormap_and_free%28colormap%3AX11%3A%3AC%3A%3AColormap%29%3AX11%3A%3AC%3A%3AColormap-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>The create_simple_window function creates an unmapped InputOutput subwindow for a specified parent window,
-returns the window ID of the created window, and causes the X server to generate a CreateNotify event.
-The created window is placed on top in the stacking order with respect to siblings.
-Any part of the window that extends outside its parent window is clipped.
-The border_width for an InputOnly window must be zero, or a BadMatch error results.
-create_simple_window inherits its depth, class, and visual from its parent.
-All other window attributes, except background and border, have their default values.</p></div>
+        <div class="doc"><p>Creates a colormap</p>
+
+<h3>Arguments</h3>
+
+<ul><li><strong>colormap</strong> Specifies the colormap.</li></ul>
+
+<h3>Description</h3>
+
+<p>The <code><a href="../X11/Display.html#copy_colormap_and_free%28colormap%3AX11%3A%3AC%3A%3AColormap%29%3AX11%3A%3AC%3A%3AColormap-instance-method">#copy_colormap_and_free</a></code> function creates a colormap of the same visual
+type and for the same screen as the specified colormap and returns the new colormap ID.
+It also moves all of the client's existing allocation from the specified colormap to the new
+colormap with their color values intact and their read-only or writable characteristics
+intact and frees those entries in the specified colormap. Color values
+in other entries in the new colormap are undefined. If the specified
+colormap was created by the client with alloc set to <strong>AllocAll</strong>,
+the new colormap is also created with <strong>AllocAll</strong>, all color values
+for all entries are copied from the specified colormap, and then all
+entries in the specified colormap are freed. If the specified colormap
+was not created by the client with <strong>AllocAll</strong>, the allocations to be
+moved are all those pixels and planes that have been allocated by the
+client using <code>alloc_color</code>, <code>alloc_named_color</code>, <code>alloc_color_cells</code>,
+or <code>alloc_color_planes</code> and that have not been freed since they were allocated.</p>
+
+<p><code><a href="../X11/Display.html#copy_colormap_and_free%28colormap%3AX11%3A%3AC%3A%3AColormap%29%3AX11%3A%3AC%3A%3AColormap-instance-method">#copy_colormap_and_free</a></code> can generate <strong>BadAlloc</strong> and <strong>BadColor</strong> errors.</p>
+
+<h3>Diagnostics</h3>
+
+<ul><li><strong>BadAlloc</strong> The server failed to allocate the requested source or server memory.</li><li><strong>BadColor</strong> A value for a <code><a href="../X11/C/Colormap.html">Colormap</a></code> argument does not name a defined <code><a href="../X11/C/Colormap.html">Colormap</a></code>.</li></ul></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L327" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L347" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_bitmap_from_data&#40;d:Drawable,data:Bytes,width:UInt32,height:UInt32&#41;:Pixmap-instance-method">
+      <div class="signature">
+        
+        def <strong>create_bitmap_from_data</strong>(d : <a href="../X11/C/Drawable.html">Drawable</a>, data : Bytes, width : UInt32, height : UInt32) : <a href="../X11/C/Pixmap.html">Pixmap</a>
+
+        <a class="method-permalink" href="#create_bitmap_from_data%28d%3ADrawable%2Cdata%3ABytes%2Cwidth%3AUInt32%2Cheight%3AUInt32%29%3APixmap-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a pixmap from data.</p>
+
+<h3>Arguments</h3>
+
+<ul><li><strong>d</strong> Specifies the drawable that indicates the screen.</li><li><strong>data</strong> Specifies the location of the bitmap data.</li><li><strong>width</strong>, <strong>height</strong> Specify the width and height.</li></ul>
+
+<h3>Description</h3>
+
+<p>The <code><a href="../X11/Display.html#create_bitmap_from_data%28d%3ADrawable%2Cdata%3ABytes%2Cwidth%3AUInt32%2Cheight%3AUInt32%29%3APixmap-instance-method">#create_bitmap_from_data</a></code> function allows you to include in your C program (using #include)
+a bitmap file that was written out by <code>write_bitmap_file</code> (X version 11 format only)
+without reading in the bitmap file. The following example creates a gray bitmap:</p>
+
+<pre><code class='language-c'>#include "gray.bitmap"
+
+Pixmap bitmap;
+bitmap = XCreateBitmapFromData(display, window, gray_bits, gray_width, gray_height);</code></pre>
+
+<p>If insufficient working storage was allocated, <code><a href="../X11/Display.html#create_bitmap_from_data%28d%3ADrawable%2Cdata%3ABytes%2Cwidth%3AUInt32%2Cheight%3AUInt32%29%3APixmap-instance-method">#create_bitmap_from_data</a></code> returns <strong>None</strong>.
+It is your responsibility to free the bitmap using <code>free_pixmap</code> when finished.</p>
+
+<p><code><a href="../X11/Display.html#create_bitmap_from_data%28d%3ADrawable%2Cdata%3ABytes%2Cwidth%3AUInt32%2Cheight%3AUInt32%29%3APixmap-instance-method">#create_bitmap_from_data</a></code> can generate a <strong>BadAlloc</strong> and <strong>BadGC</strong> errors.</p>
+
+<h3>Diagnostics</h3>
+
+<ul><li><strong>BadAlloc</strong> The server failed to allocate the requested source or server memory.</li><li><strong>BadGC</strong> A value for a <code><a href="../X11/C/GContext.html">GContext</a></code> argument does not name a defined <code><a href="../X11/C/GContext.html">GContext</a></code>.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L628" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_colormap&#40;w:X11::C::Window,visual:Visual,alloc:Int32&#41;:X11::C::Colormap-instance-method">
+      <div class="signature">
+        
+        def <strong>create_colormap</strong>(w : <a href="../X11/C/Window.html">X11::C::Window</a>, visual : <a href="../X11/Visual.html">Visual</a>, alloc : Int32) : <a href="../X11/C/Colormap.html">X11::C::Colormap</a>
+
+        <a class="method-permalink" href="#create_colormap%28w%3AX11%3A%3AC%3A%3AWindow%2Cvisual%3AVisual%2Calloc%3AInt32%29%3AX11%3A%3AC%3A%3AColormap-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a colormap</p>
+
+<h3>Arguments</h3>
+
+<ul><li><strong>w</strong> Specifies the window on whose screen you want to create a colormap.</li><li><strong>visual</strong> Specifies a visual type supported on the screen. If the visual type is not one supported by the screen, a <strong>BadMatch</strong> error results.</li><li><strong>alloc</strong> Specifies the colormap entries to be allocated. You can pass <strong>AllocNone</strong> or <strong>AllocAll</strong>.</li></ul>
+
+<h3>Description</h3>
+
+<p>The <code><a href="../X11/Display.html#create_colormap%28w%3AX11%3A%3AC%3A%3AWindow%2Cvisual%3AVisual%2Calloc%3AInt32%29%3AX11%3A%3AC%3A%3AColormap-instance-method">#create_colormap</a></code> function creates a colormap of the specified visual type
+for the screen on which the specified window resides and returns the colormap ID#
+associated with it. Note that the specified window is only used to determine the screen.</p>
+
+<p>The initial values of the colormap entries are undefined for the visual classes
+<code><a href="../X11/C.html#GrayScale">GrayScale</a></code>, <code><a href="../X11/C.html#PseudoColor">PseudoColor</a></code>, and <code><a href="../X11/C.html#DirectColor">DirectColor</a></code>. For <code><a href="../X11/C.html#StaticGray">StaticGray</a></code>, <code><a href="../X11/C.html#StaticColor">StaticColor</a></code>,
+and <code><a href="../X11/C.html#TrueColor">TrueColor</a></code>, the entries have defined values, but those values are specific
+to the visual and are not defined by X. For <code><a href="../X11/C.html#StaticGray">StaticGray</a></code>, <code><a href="../X11/C.html#StaticColor">StaticColor</a></code>, and <code><a href="../X11/C.html#TrueColor">TrueColor</a></code>,
+alloc must be <strong>AllocNone</strong>, or a <strong>BadMatch</strong> error results. For the other visual classes,
+if alloc is <strong>AllocNone</strong>, the colormap initially has no allocated entries,
+and clients can allocate them. For information about the visual types, see "Visual Types".</p>
+
+<p>If alloc is **AllocAll the entire colormap is allocated writable.
+The initial values of all allocated entries are undefined.
+For <code><a href="../X11/C.html#GrayScale">GrayScale</a></code> and <code><a href="../X11/C.html#PseudoColor">PseudoColor</a></code>, the effect is as if an <code>alloc_color_cells</code> call returned
+all pixel values from zero to <code>N - 1</code>, where <code>N</code> is the colormap entries value in the specified visual.
+For <code><a href="../X11/C.html#DirectColor">DirectColor</a></code>, the effect is as if an <code>alloc_color_planes</code> call returned a
+pixel value of zero and red_mask, green_mask, and blue_mask values containing the same
+bits as the corresponding masks in the specified visual. However, in all cases,
+none of these entries can be freed by using <code>free_colors</code>.</p>
+
+<p><code><a href="../X11/Display.html#create_colormap%28w%3AX11%3A%3AC%3A%3AWindow%2Cvisual%3AVisual%2Calloc%3AInt32%29%3AX11%3A%3AC%3A%3AColormap-instance-method">#create_colormap</a></code> can generate <strong>BadAlloc</strong>, <strong>BadMatch</strong>, <strong>BadValue</strong>, and <strong>BadWindow</strong> errors.</p>
+
+<h3>Diagnostics</h3>
+
+<ul><li><strong>BadAlloc</strong> The server failed to allocate the requested source or server memory.</li><li><strong>BadMatch</strong> An <code><a href="../X11/C.html#InputOnly">InputOnly</a></code> window is used as a <code><a href="../X11/C/Drawable.html">Drawable</a></code>.</li><li><strong>BadMatch</strong> Some argument or pair of arguments has the correct type and range but fails to match in some other way required by the request.</li><li><strong>BadPixmap</strong> A value for a <code><a href="../X11/C/Pixmap.html">Pixmap</a></code> argument does not name a defined <code><a href="../X11/C/Pixmap.html">Pixmap</a></code>.</li><li><strong>BadValue</strong> Some numeric value falls outside the range of values accepted by the request.
+Unless a specific range is specified for an argument, the full range defined by the argument's type is accepted.
+Any argument defined as a set of alternatives can generate this error.</li><li><strong>BadWindow</strong> A value for a Window argument does not name a defined <code><a href="../X11/C/Window.html">Window</a></code>.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L391" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_font_cursor&#40;shape:UInt32&#41;:X11::C::Cursor-instance-method">
+      <div class="signature">
+        
+        def <strong>create_font_cursor</strong>(shape : UInt32) : <a href="../X11/C/Cursor.html">X11::C::Cursor</a>
+
+        <a class="method-permalink" href="#create_font_cursor%28shape%3AUInt32%29%3AX11%3A%3AC%3A%3ACursor-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a cursor.</p>
+
+<h3>Arguments</h3>
+
+<ul><li><strong>shape</strong> Specifies the shape of the cursor.</li></ul>
+
+<h3>Description</h3>
+
+<p>X provides a set of standard cursor shapes in a special font named cursor.
+Applications are encouraged to use this interface for their cursors because
+the font can be customized for the individual display type.
+The shape argument specifies which glyph of the standard fonts to use.</p>
+
+<p>The hotspot comes from the information stored in the cursor font.
+The initial colors of a cursor are a black foreground and a white background
+(see <code>recolor_cursor</code>).</p>
+
+<p><code><a href="../X11/Display.html#create_font_cursor%28shape%3AUInt32%29%3AX11%3A%3AC%3A%3ACursor-instance-method">#create_font_cursor</a></code> can generate <strong>BadAlloc</strong> and <strong>BadValue</strong> errors.</p>
+
+<h3>Diagnostics</h3>
+
+<ul><li><strong>BadAlloc</strong> The server failed to allocate the requested source or server memory.</li><li><strong>BadValue</strong> Some numeric value falls outside the range of values accepted by the request.
+Unless a specific range is specified for an argument, the full range defined by the argument's
+type is accepted. Any argument defined as a set of alternatives can generate this error.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L491" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_gc&#40;d:Drawable,valuemask:UInt64,values:GCValues&#41;:X11::X::GC-instance-method">
+      <div class="signature">
+        
+        def <strong>create_gc</strong>(d : <a href="../X11/C/Drawable.html">Drawable</a>, valuemask : UInt64, values : <a href="../X11/GCValues.html">GCValues</a>) : <a href="../X11/C/X/GC.html">X11::X::GC</a>
+
+        <a class="method-permalink" href="#create_gc%28d%3ADrawable%2Cvaluemask%3AUInt64%2Cvalues%3AGCValues%29%3AX11%3A%3AX%3A%3AGC-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a graphics context.</p>
+
+<h3>Arguments</h3>
+
+<ul><li><strong>d</strong> Specifies the drawable.</li><li><strong>valuemask</strong> Specifies which components in the GC are to be set using
+the information in the specified values structure. This argument is the
+bitwise inclusive OR of zero or more of the valid GC component mask bits.</li><li><strong>values</strong> Specifies any values as specified by the valuemask.</li></ul>
+
+<h3>Description</h3>
+
+<p>The <code><a href="../X11/Display.html#create_gc%28d%3ADrawable%2Cvaluemask%3AUInt64%2Cvalues%3AGCValues%29%3AX11%3A%3AX%3A%3AGC-instance-method">#create_gc</a></code> function creates a graphics context and returns a GC.
+The GC can be used with any destination drawable having the same root and
+depth as the specified drawable. Use with other drawables results in a <strong>BadMatch</strong> error.</p>
+
+<p><code><a href="../X11/Display.html#create_gc%28d%3ADrawable%2Cvaluemask%3AUInt64%2Cvalues%3AGCValues%29%3AX11%3A%3AX%3A%3AGC-instance-method">#create_gc</a></code> can generate <strong>BadAlloc</strong>, <strong>BadDrawable</strong>, <strong>BadFont</strong>, <strong>BadMatch</strong>, <strong>BadPixmap</strong>, and <strong>BadValue</strong> errors.</p>
+
+<h3>Diagnostics</h3>
+
+<ul><li><strong>BadAlloc</strong> The server failed to allocate the requested source or server memory.</li><li><strong>BadDrawable</strong> A value for a <code><a href="../X11/C/Drawable.html">Drawable</a></code> argument does not name a defined <code><a href="../X11/C/Window.html">Window</a></code> or <code><a href="../X11/C/Pixmap.html">Pixmap</a></code>.</li><li><strong>BadFont</strong> A value for a font argument does not name a defined font (or, in some cases, <code><a href="../X11/C/GContext.html">GContext</a></code>).</li><li><strong>BadMatch</strong> An <strong>InputOnly</strong> window is used as a <code><a href="../X11/C/Drawable.html">Drawable</a></code>.</li><li><strong>BadMatch</strong> Some argument or pair of arguments has the correct type and range but fails to match in some other way required by the request.</li><li><strong>BadPixmap</strong> A value for a <code><a href="../X11/C/Pixmap.html">Pixmap</a></code> argument does not name a defined <code><a href="../X11/C/Pixmap.html">Pixmap</a></code>.</li><li><strong>BadValue</strong> Some numeric value falls outside the range of values accepted by the request.
+Unless a specific range is specified for an argument, the full range defined
+by the argument's type is accepted. Any argument defined as a set of alternatives can generate this error.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L548" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_glyph_cursor&#40;source_font:X11::C::Font,mask_font:X11::C::Font,source_char:UInt32,mask_char:UInt32,foreground_color:Color,background_color:Color&#41;:X11::C::Cursor-instance-method">
+      <div class="signature">
+        
+        def <strong>create_glyph_cursor</strong>(source_font : <a href="../X11/C/Font.html">X11::C::Font</a>, mask_font : <a href="../X11/C/Font.html">X11::C::Font</a>, source_char : UInt32, mask_char : UInt32, foreground_color : <a href="../X11/Color.html">Color</a>, background_color : <a href="../X11/Color.html">Color</a>) : <a href="../X11/C/Cursor.html">X11::C::Cursor</a>
+
+        <a class="method-permalink" href="#create_glyph_cursor%28source_font%3AX11%3A%3AC%3A%3AFont%2Cmask_font%3AX11%3A%3AC%3A%3AFont%2Csource_char%3AUInt32%2Cmask_char%3AUInt32%2Cforeground_color%3AColor%2Cbackground_color%3AColor%29%3AX11%3A%3AC%3A%3ACursor-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a cursor.</p>
+
+<h3>Arguments</h3>
+
+<ul><li><strong>source_font</strong> Specifies the font for the source glyph.</li><li><strong>mask_font</strong> Specifies the font for the mask glyph or <strong>None</strong>.</li><li><strong>source_char</strong> Specifies the character glyph for the source.</li><li><strong>mask_char-</strong> Specifies the glyph character for the mask.</li><li><strong>foreground_color</strong> Specifies the RGB values for the foreground of the source.</li><li><strong>background_color</strong> Specifies the RGB values for the background of the source.</li></ul>
+
+<h3>Description</h3>
+
+<p>The <code><a href="../X11/Display.html#create_glyph_cursor%28source_font%3AX11%3A%3AC%3A%3AFont%2Cmask_font%3AX11%3A%3AC%3A%3AFont%2Csource_char%3AUInt32%2Cmask_char%3AUInt32%2Cforeground_color%3AColor%2Cbackground_color%3AColor%29%3AX11%3A%3AC%3A%3ACursor-instance-method">#create_glyph_cursor</a></code> function is similar to <code><a href="../X11/Display.html#create_pixmap_cursor%28source%3AX11%3A%3AC%3A%3APixmap%2Cmask%3AX11%3A%3AC%3A%3APixmap%2Cforeground_color%3AColor%2Cbackground_color%3AColor%2Cx%3AUInt32%2Cy%3AUInt32%29%3AX11%3A%3AC%3A%3ACursor-instance-method">#create_pixmap_cursor</a></code>
+except that the source and mask bitmaps are obtained from the specified font glyphs.
+The source_char must be a defined glyph in <code>source_font</code>, or a <strong>BadValue</strong> error results.
+If mask_font is given, mask_char must be a defined glyph in <code>mask_font</code>, or a <strong>BadValue</strong> error results.
+The <code>mask_font</code> and character are optional. The origins of the <code>source_char</code> and <code>mask_char</code>
+(if defined) glyphs are positioned coincidently and define the hotspot.
+The source_char and mask_char need not have the same bounding box metrics,
+and there is no restriction on the placement of the hotspot relative to the bounding boxes.
+If no mask_char is given, all pixels of the source are displayed. You can
+free the fonts immediately by calling <code>X.free_font</code> if no further explicit references to them are to be made.</p>
+
+<p>For 2-byte matrix fonts, the 16-bit value should be formed with the byte1
+member in the most-significant byte and the byte2 member in the least-significant byte.</p>
+
+<p><code><a href="../X11/Display.html#create_glyph_cursor%28source_font%3AX11%3A%3AC%3A%3AFont%2Cmask_font%3AX11%3A%3AC%3A%3AFont%2Csource_char%3AUInt32%2Cmask_char%3AUInt32%2Cforeground_color%3AColor%2Cbackground_color%3AColor%29%3AX11%3A%3AC%3A%3ACursor-instance-method">#create_glyph_cursor</a></code> can generate <strong>BadAlloc</strong>, <strong>BadFont</strong>, and <strong>BadValue</strong> errors.</p>
+
+<h3>Diagnostics</h3>
+
+<ul><li><strong>BadAlloc</strong> 	The server failed to allocate the requested source or server memory.</li><li><strong>BadFont</strong> A value for a font argument does not name a defined font (or, in some cases, <code><a href="../X11/C/GContext.html">GContext</a></code>).</li><li><strong>BadValue</strong> Some numeric value falls outside the range of values accepted by the request.
+Unless a specific range is specified for an argument, the full range defined by the argument's
+type is accepted. Any argument defined as a set of alternatives can generate this error.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L465" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_pixmap&#40;d:Drawable,width:UInt32,height:UInt32,depth:UInt32&#41;:Pixmap-instance-method">
+      <div class="signature">
+        
+        def <strong>create_pixmap</strong>(d : <a href="../X11/C/Drawable.html">Drawable</a>, width : UInt32, height : UInt32, depth : UInt32) : <a href="../X11/C/Pixmap.html">Pixmap</a>
+
+        <a class="method-permalink" href="#create_pixmap%28d%3ADrawable%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cdepth%3AUInt32%29%3APixmap-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a pixmap.</p>
+
+<h3>Arguments</h3>
+
+<ul><li><strong>d</strong> Specifies which screen the pixmap is created on.</li><li><strong>width</strong>, <strong>height</strong> Specify the width and height, which define the dimensions of the pixmap.</li><li><strong>depth</strong> Specifies the depth of the pixmap.</li></ul>
+
+<h3>Description</h3>
+
+<p>The <code><a href="../X11/Display.html#create_pixmap%28d%3ADrawable%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cdepth%3AUInt32%29%3APixmap-instance-method">#create_pixmap</a></code> function creates a pixmap of the width, height,
+and depth you specified and returns a pixmap ID that identifies it.
+It is valid to pass an <strong>InputOnly</strong> window to the drawable argument.
+The width and height arguments must be nonzero, or a <strong>BadValue</strong> error results.
+The depth argument must be one of the depths supported by the screen of the specified drawable, or a <strong>BadValue</strong> error results.</p>
+
+<p>The server uses the specified drawable to determine on which screen to create the pixmap.
+The pixmap can be used only on this screen and only with other drawables of the same depth (see <code>copy_plane</code>
+for an exception to this rule). The initial contents of the pixmap are undefined.</p>
+
+<p><code><a href="../X11/Display.html#create_pixmap%28d%3ADrawable%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cdepth%3AUInt32%29%3APixmap-instance-method">#create_pixmap</a></code> can generate <strong>BadAlloc</strong>, <strong>BadDrawable</strong>, and <strong>BadValue</strong> errors.</p>
+
+<h3>Diagnostics</h3>
+
+<ul><li><strong>BadAlloc</strong> The server failed to allocate the requested source or server memory.</li><li><strong>BadDrawable</strong> A value for a <code><a href="../X11/C/Drawable.html">Drawable</a></code> argument does not name a defined <code><a href="../X11/C/Window.html">Window</a></code> or <code><a href="../X11/C/Pixmap.html">Pixmap</a></code>.</li><li><strong>BadValue</strong> Some numeric value falls outside the range of values accepted by the request.
+Unless a specific range is specified for an argument, the full range defined
+by the argument's type is accepted. Any argument defined as a set of alternatives can generate this error.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L599" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_pixmap_cursor&#40;source:X11::C::Pixmap,mask:X11::C::Pixmap,foreground_color:Color,background_color:Color,x:UInt32,y:UInt32&#41;:X11::C::Cursor-instance-method">
+      <div class="signature">
+        
+        def <strong>create_pixmap_cursor</strong>(source : <a href="../X11/C/Pixmap.html">X11::C::Pixmap</a>, mask : <a href="../X11/C/Pixmap.html">X11::C::Pixmap</a>, foreground_color : <a href="../X11/Color.html">Color</a>, background_color : <a href="../X11/Color.html">Color</a>, x : UInt32, y : UInt32) : <a href="../X11/C/Cursor.html">X11::C::Cursor</a>
+
+        <a class="method-permalink" href="#create_pixmap_cursor%28source%3AX11%3A%3AC%3A%3APixmap%2Cmask%3AX11%3A%3AC%3A%3APixmap%2Cforeground_color%3AColor%2Cbackground_color%3AColor%2Cx%3AUInt32%2Cy%3AUInt32%29%3AX11%3A%3AC%3A%3ACursor-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a cursor.</p>
+
+<h3>Arguments</h3>
+
+<ul><li><strong>source</strong> Specifies the shape of the source cursor.</li><li><strong>mask</strong> Specifies the cursor's source bits to be displayed or <strong>None</strong>.</li><li><strong>foreground_color</strong> Specifies the RGB values for the foreground of the source.</li><li><strong>background_color</strong> Specifies the RGB values for the background of the source.</li><li><strong>x</strong>, <strong>y</strong> Specify the x and y coordinates, which indicate the hotspot relative to the source's origin.</li></ul>
+
+<h3>Description</h3>
+
+<p>The <code><a href="../X11/Display.html#create_pixmap_cursor%28source%3AX11%3A%3AC%3A%3APixmap%2Cmask%3AX11%3A%3AC%3A%3APixmap%2Cforeground_color%3AColor%2Cbackground_color%3AColor%2Cx%3AUInt32%2Cy%3AUInt32%29%3AX11%3A%3AC%3A%3ACursor-instance-method">#create_pixmap_cursor</a></code> function creates a cursor and returns the cursor ID associated with it.
+The foreground and background RGB values must be specified using <code>foreground_color</code> and <code>background_color</code>,
+even if the X server only has a <code><a href="../X11/C.html#StaticGray">StaticGray</a></code> or <code><a href="../X11/C.html#GrayScale">GrayScale</a></code> screen.
+The foreground color is used for the pixels set to 1 in the source,
+and the background color is used for the pixels set to 0. Both source and mask,
+if specified, must have depth one (or a <strong>BadMatch</strong> error results) but can have any root.
+The mask argument defines the shape of the cursor. The pixels set to 1 in
+the mask define which source pixels are displayed, and the pixels set to 0
+define which pixels are ignored. If no mask is given, all pixels of the
+source are displayed. The mask, if present, must be the same size as the
+pixmap defined by the source argument, or a <strong>BadMatch</strong> error results.
+The hotspot must be a point within the source, or a <strong>BadMatch</strong> error results.</p>
+
+<p>The components of the cursor can be transformed arbitrarily to meet display limitations.
+The pixmaps can be freed immediately if no further explicit references to
+them are to be made. Subsequent drawing in the source or mask pixmap has
+an undefined effect on the cursor. The X server might or might not make a copy of the pixmap.</p>
+
+<p><code><a href="../X11/Display.html#create_pixmap_cursor%28source%3AX11%3A%3AC%3A%3APixmap%2Cmask%3AX11%3A%3AC%3A%3APixmap%2Cforeground_color%3AColor%2Cbackground_color%3AColor%2Cx%3AUInt32%2Cy%3AUInt32%29%3AX11%3A%3AC%3A%3ACursor-instance-method">#create_pixmap_cursor</a></code> can generate <strong>BadAlloc</strong> and <strong>BadPixmap</strong> errors.</p>
+
+<h3>Diagnostics</h3>
+
+<ul><li><strong>BadAlloc</strong> The server failed to allocate the requested source or server memory.</li><li><strong>BadPixmap</strong> A value for a <code><a href="../X11/C/Pixmap.html">Pixmap</a></code> argument does not name a defined <code><a href="../X11/C/Pixmap.html">Pixmap</a></code>.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L428" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_pixmap_from_bitmap_data&#40;d:Drawable,data:Bytes,width:UInt32,height:UInt32,fg:UInt64,bg:UInt64,depth:UInt64&#41;:Pixmap-instance-method">
+      <div class="signature">
+        
+        def <strong>create_pixmap_from_bitmap_data</strong>(d : <a href="../X11/C/Drawable.html">Drawable</a>, data : Bytes, width : UInt32, height : UInt32, fg : UInt64, bg : UInt64, depth : UInt64) : <a href="../X11/C/Pixmap.html">Pixmap</a>
+
+        <a class="method-permalink" href="#create_pixmap_from_bitmap_data%28d%3ADrawable%2Cdata%3ABytes%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cfg%3AUInt64%2Cbg%3AUInt64%2Cdepth%3AUInt64%29%3APixmap-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a pixmap.</p>
+
+<h3>Arguments</h3>
+
+<ul><li><strong>d</strong> Specifies the drawable that indicates the screen.</li><li><strong>data</strong> Specifies the data in bitmap format.</li><li><strong>width</strong>, <strong>height</strong> Specify the width and height.</li><li><strong>fg</strong>, <strong>bg</strong> Specify the foreground and background pixel values to use.</li><li><strong>depth</strong> Specifies the depth of the pixmap.</li></ul>
+
+<h3>Description</h3>
+
+<p>The <code><a href="../X11/Display.html#create_pixmap_from_bitmap_data%28d%3ADrawable%2Cdata%3ABytes%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cfg%3AUInt64%2Cbg%3AUInt64%2Cdepth%3AUInt64%29%3APixmap-instance-method">#create_pixmap_from_bitmap_data</a></code> function creates a pixmap of the given
+depth and then does a bitmap-format <code>put_image</code> of the data into it.
+The depth must be supported by the screen of the specified drawable, or a <strong>BadMatch</strong> error results.</p>
+
+<p><code><a href="../X11/Display.html#create_pixmap_from_bitmap_data%28d%3ADrawable%2Cdata%3ABytes%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cfg%3AUInt64%2Cbg%3AUInt64%2Cdepth%3AUInt64%29%3APixmap-instance-method">#create_pixmap_from_bitmap_data</a></code> can generate <strong>BadAlloc</strong>, <strong>BadDrawable</strong>, <strong>BadGC</strong>, and <strong>BadValue</strong> errors.</p>
+
+<h3>Diagnostics</h3>
+
+<ul><li><strong>BadAlloc</strong> The server failed to allocate the requested source or server memory.</li><li><strong>BadDrawable</strong> A value for a <code><a href="../X11/C/Drawable.html">Drawable</a></code> argument does not name a defined <code><a href="../X11/C/Window.html">Window</a></code> or <code><a href="../X11/C/Pixmap.html">Pixmap</a></code>.</li><li><strong>BadGC</strong> A value for a <code><a href="../X11/C/GContext.html">GContext</a></code> argument does not name a defined <code><a href="../X11/C/GContext.html">GContext</a></code>.</li><li><strong>BadMatch</strong> An <strong>InputOnly</strong> window is used as a <code><a href="../X11/C/Drawable.html">Drawable</a></code>.</li><li><strong>BadMatch</strong> Some argument or pair of arguments has the correct type and range but fails to match in some other way required by the request.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L654" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_simple_window&#40;parent:Window,x:Int32,y:Int32,width:UInt32,height:UInt32,border_width:UInt32,border:UInt64,background:UInt64&#41;:Window-instance-method">
+      <div class="signature">
+        
+        def <strong>create_simple_window</strong>(parent : <a href="../X11/C/Window.html">Window</a>, x : Int32, y : Int32, width : UInt32, height : UInt32, border_width : UInt32, border : UInt64, background : UInt64) : <a href="../X11/C/Window.html">Window</a>
+
+        <a class="method-permalink" href="#create_simple_window%28parent%3AWindow%2Cx%3AInt32%2Cy%3AInt32%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cborder_width%3AUInt32%2Cborder%3AUInt64%2Cbackground%3AUInt64%29%3AWindow-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates an unmapped subwindow.</p>
+
+<h3>Description</h3>
+
+<p>The `create_simple_window function creates an unmapped <strong>InputOutput</strong> subwindow
+for a specified parent window, returns the window ID of the created window,
+and causes the X server to generate a <strong>CreateNotify</strong> event.
+The created window is placed on top in the stacking order with respect to siblings.
+Any part of the window that extends outside its parent window is clipped.
+The <code>border_width</code> for an <strong>InputOnly</strong> window must be zero, or a <strong>BadMatch</strong> error results.
+<code><a href="../X11/Display.html#create_simple_window%28parent%3AWindow%2Cx%3AInt32%2Cy%3AInt32%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cborder_width%3AUInt32%2Cborder%3AUInt64%2Cbackground%3AUInt64%29%3AWindow-instance-method">#create_simple_window</a></code> inherits its depth, class, and visual from its parent.
+All other window attributes, except background and border, have their default values.</p>
+
+<p><code><a href="../X11/Display.html#create_simple_window%28parent%3AWindow%2Cx%3AInt32%2Cy%3AInt32%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cborder_width%3AUInt32%2Cborder%3AUInt64%2Cbackground%3AUInt64%29%3AWindow-instance-method">#create_simple_window</a></code> can generate <strong>BadAlloc</strong>, <strong>BadMatch</strong>, <strong>BadValue</strong>, and <strong>BadWindow</strong> errors.</p>
+
+<p>For more information see: <code><a href="../X11/Display.html#create_window%28parent%3AWindow%2Cx%3AInt32%2Cy%3AInt32%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cborder_width%3AUInt32%2Cdepth%3AInt32%2Cc_class%3AUInt32%2Cvisual%3AVisual%2Cvaluemask%3AUInt64%2Cattributes%3ASetWindowAttributes%29%3AWindow-instance-method">#create_window</a></code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L673" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_window&#40;parent:Window,x:Int32,y:Int32,width:UInt32,height:UInt32,border_width:UInt32,depth:Int32,c_class:UInt32,visual:Visual,valuemask:UInt64,attributes:SetWindowAttributes&#41;:Window-instance-method">
+      <div class="signature">
+        
+        def <strong>create_window</strong>(parent : <a href="../X11/C/Window.html">Window</a>, x : Int32, y : Int32, width : UInt32, height : UInt32, border_width : UInt32, depth : Int32, c_class : UInt32, visual : <a href="../X11/Visual.html">Visual</a>, valuemask : UInt64, attributes : <a href="../X11/SetWindowAttributes.html">SetWindowAttributes</a>) : <a href="../X11/C/Window.html">Window</a>
+
+        <a class="method-permalink" href="#create_window%28parent%3AWindow%2Cx%3AInt32%2Cy%3AInt32%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cborder_width%3AUInt32%2Cdepth%3AInt32%2Cc_class%3AUInt32%2Cvisual%3AVisual%2Cvaluemask%3AUInt64%2Cattributes%3ASetWindowAttributes%29%3AWindow-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a window.</p>
+
+<h3>Arguments</h3>
+
+<ul><li><strong>attributes</strong> Specifies the structure from which the values (as specified by the value mask) are to be taken. The value mask should have the appropriate bits set to indicate which attributes have been set in the structure.</li><li><strong>background</strong> Specifies the background pixel value of the window.</li><li><strong>border</strong> Specifies the border pixel value of the window.</li><li><strong>border_width</strong> Specifies the width of the created window's border in pixels.</li><li><strong>class</strong> Specifies the created window's class. You can pass <code><a href="../X11/C.html#InputOutput">InputOutput</a></code>,
+<code><a href="../X11/C.html#InputOnly">InputOnly</a></code>, or <strong>CopyFromParent</strong>. A class of <strong>CopyFromParent</strong> means the class is taken from the parent.</li><li><strong>depth</strong> Specifies the window's depth. A depth of <strong>CopyFromParent</strong> means the depth is taken from the parent.</li><li><strong>parent</strong> Specifies the parent window.</li><li><strong>valuemask</strong> Specifies which window attributes are defined in the attributes argument.
+This mask is the bitwise inclusive OR of the valid attribute mask bits. If valuemask is zero, the attributes are ignored and are not referenced.</li><li><strong>visual</strong>Specifies the visual type. A visual of <strong>CopyFromParent</strong> means the visual type is taken from the parent.</li><li><strong>width</strong>, <strong>height</strong> Specify the width and height, which are the created window's inside dimensions and do not include the created window's borders</li><li><strong>x</strong>, <strong>y</strong> Specify the x and y coordinates, which are the top-left outside corner of the window's borders and are relative to the inside of the parent window's borders.</li></ul>
+
+<h3>Description</h3>
+
+<p>The <code><a href="../X11/Display.html#create_window%28parent%3AWindow%2Cx%3AInt32%2Cy%3AInt32%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cborder_width%3AUInt32%2Cdepth%3AInt32%2Cc_class%3AUInt32%2Cvisual%3AVisual%2Cvaluemask%3AUInt64%2Cattributes%3ASetWindowAttributes%29%3AWindow-instance-method">#create_window</a></code> function creates an unmapped subwindow for a specified parent window,
+returns the window ID of the created window, and causes the X server to generate a <code><a href="../X11/C.html#CreateNotify">CreateNotify</a></code> event.
+The created window is placed on top in the stacking order with respect to siblings.</p>
+
+<p>The coordinate system has the X axis horizontal and the Y axis vertical with the origin [0, 0] at the upper-left corner.
+Coordinates are integral, in terms of pixels, and coincide with pixel centers.
+Each window and pixmap has its own coordinate system. For a window, the origin is inside the border at the inside, upper-left corner.</p>
+
+<p>The border_width for an <strong>InputOnly</strong> window must be zero, or a <strong>BadMatch</strong> error results.
+For class <strong>InputOutput</strong>, the visual type and depth must be a combination supported for the screen,
+or a BadMatch error results. The depth need not be the same as the parent,
+but the parent must not be a window of class <strong>InputOnly</strong>, or a <strong>BadMatch</strong> error results.
+For an <strong>InputOnly</strong> window, the depth must be zero, and the visual must be
+one supported by the screen. If either condition is not met, a <strong>BadMatch</strong> error results.
+The parent window, however, may have any depth and class. If you specify any invalid window attribute for a window, a <strong>BadMatch</strong> error results.</p>
+
+<p>The created window is not yet displayed (mapped) on the user's display.
+To display the window, call <code><a href="../X11/Display.html#map_window%28w%3AWindow%29-instance-method">#map_window</a></code>. The new window initially uses
+the same cursor as its parent. A new cursor can be defined for the new window
+by calling <code>define_cursor</code>. The window will not be visible on the screen
+unless it and all of its ancestors are mapped and it is not obscured by any of its ancestors.</p>
+
+<p>`create_window can generate <strong>BadAlloc</strong>, <strong>BadColor</strong>, <strong>BadCursor</strong>, <strong>BadMatch</strong>, <strong>BadPixmap</strong>, <strong>BadValue</strong>, and <strong>BadWindow</strong> errors.</p>
+
+<h3>Diagnostics</h3>
+
+<ul><li><strong>BadAlloc</strong> The server failed to allocate the requested resource or server memory.</li><li><strong>BadColor</strong> A value for a <code><a href="../X11/C/Colormap.html">Colormap</a></code> argument does not name a defined <code><a href="../X11/C/Colormap.html">Colormap</a></code>.</li><li><strong>BadCursor</strong> A value for a <code><a href="../X11/C/Cursor.html">Cursor</a></code> argument does not name a defined <code><a href="../X11/C/Cursor.html">Cursor</a></code>.</li><li><strong>BadMatch</strong> The values do not exist for an <strong>InputOnly</strong> window.</li><li><strong>BadMatch</strong> Some argument or pair of arguments has the correct type and range but fails to match in some other way required by the request.</li><li><strong>BadPixmap</strong> A value for a <code><a href="../X11/C/Pixmap.html">Pixmap</a></code> argument does not name a defined <code><a href="../X11/C/Pixmap.html">Pixmap</a></code>.</li><li><strong>BadValue</strong> Some numeric value falls outside the range of values accepted by the request.
+Unless a specific range is specified for an argument, the full range defined by the argument's type is accepted.
+Any argument defined as a set of alternatives can generate this error.</li><li><strong>BadWindow</strong> A value for a <code><a href="../X11/C/Window.html">Window</a></code> argument does not name a defined <code><a href="../X11/C/Window.html">Window</a></code>.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L749" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -813,11 +1533,11 @@ All other window attributes, except background and border, have their default va
       
         <div class="doc"><p>Returns the value of the resource <em>prog.option</em></p>
 
-<h1>Arguments</h1>
+<h3>Arguments</h3>
 
 <ul><li><strong>display</strong> Specifies the connection to the X server.</li><li><strong>program</strong> Specifies the program name for the Xlib defaults (usually argv[0] of the main program).</li><li><strong>option</strong> Specifies the option name.</li></ul>
 
-<h1>Description</h1>
+<h3>Description</h3>
 
 <p>The <code><a href="../X11/Display.html#default%28program%3AString%2Coption%3AString%29%3AString-instance-method">#default</a></code> function returns the value of the resource <em>prog.option</em>,
 where <em>prog</em> is the program argument with the directory prefix removed and option must be a single component.
@@ -838,7 +1558,7 @@ it contains a full path name for the additional resource file. If <code>XENVIRON
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L248" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L250" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -854,7 +1574,7 @@ it contains a full path name for the additional resource file. If <code>XENVIRON
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L373" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L884" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -870,7 +1590,7 @@ it contains a full path name for the additional resource file. If <code>XENVIRON
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L365" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L876" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -886,7 +1606,7 @@ it contains a full path name for the additional resource file. If <code>XENVIRON
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L316" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L838" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -902,7 +1622,7 @@ it contains a full path name for the additional resource file. If <code>XENVIRON
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L331" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L842" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -920,7 +1640,7 @@ it contains a full path name for the additional resource file. If <code>XENVIRON
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -936,7 +1656,39 @@ it contains a full path name for the additional resource file. If <code>XENVIRON
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L353" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L864" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="extended_map_request_size:Int64-instance-method">
+      <div class="signature">
+        
+        def <strong>extended_map_request_size</strong> : Int64
+
+        <a class="method-permalink" href="#extended_map_request_size%3AInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L804" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="extensions:Array&#40;String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>extensions</strong> : Array(String)
+
+        <a class="method-permalink" href="#extensions%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L778" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -951,11 +1703,11 @@ it contains a full path name for the additional resource file. If <code>XENVIRON
       
         <div class="doc"><p>Returns data from a specified cut buffer.</p>
 
-<h1>Arguments</h1>
+<h3>Arguments</h3>
 
 <ul><li><strong>buffer</strong> Specifies the buffer from which you want the stored data returned.</li></ul>
 
-<h1>Description</h1>
+<h3>Description</h3>
 
 <p>Returns a non empty <code>String</code> if the buffer contains data.
 Returns an empty <code>String</code> if no dta in the buffer or the <code>buffer</code> is invalid.</p></div>
@@ -963,7 +1715,7 @@ Returns an empty <code>String</code> if no dta in the buffer or the <code>buffer
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L191" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L193" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -978,14 +1730,14 @@ Returns an empty <code>String</code> if no dta in the buffer or the <code>buffer
       
         <div class="doc"><p>Returns data from cut buffer 0</p>
 
-<h1>Description</h1>
+<h3>Description</h3>
 
 <p>Returns a non empty <code>String</code> if the buffer contains data, otherwise returns an empty <code>String</code>.</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L175" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L177" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1001,7 +1753,81 @@ Returns an empty <code>String</code> if no dta in the buffer or the <code>buffer
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L44" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="flush_gc&#40;gc:X11::C::GC&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>flush_gc</strong>(gc : X11::C::GC)
+
+        <a class="method-permalink" href="#flush_gc%28gc%3AX11%3A%3AC%3A%3AGC%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Forces GC component change.</p>
+
+<h3>Arguments</h3>
+
+<ul><li><strong>display</strong> Specifies the connection to the X server.</li><li><strong>gc</strong> Specifies the GC.</li></ul>
+
+<h3>Description</h3>
+
+<p>Force sending GC component changes.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L568" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="font_path:Array&#40;String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>font_path</strong> : Array(String)
+
+        <a class="method-permalink" href="#font_path%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L775" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fonts&#40;pattern:String,maxnames:Int32&#41;:Array&#40;String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>fonts</strong>(pattern : String, maxnames : Int32) : Array(String)
+
+        <a class="method-permalink" href="#fonts%28pattern%3AString%2Cmaxnames%3AInt32%29%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L763" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fonts_with_info&#40;pattern:String,maxnames:Int32&#41;:Array&#40;String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>fonts_with_info</strong>(pattern : String, maxnames : Int32) : Array(String)
+
+        <a class="method-permalink" href="#fonts_with_info%28pattern%3AString%2Cmaxnames%3AInt32%29%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L772" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1016,11 +1842,11 @@ Returns an empty <code>String</code> if no dta in the buffer or the <code>buffer
       
         <div class="doc"><p>This function specifically supports rudimentary screen dumps.</p>
 
-<h1>Arguments</h1>
+<h3>Arguments</h3>
 
 <ul><li><strong>d</strong> Specifies the drawable.</li><li><strong>x</strong>, <strong>y</strong> Specify the <em>x</em> and <em>y</em> coordinates, which are relative to the origin of the drawable and define the upper-left corner of the rectangle.</li><li><strong>width</strong>, <strong>height</strong> Specify the <em>width</em> and <em>height</em> of the subimage, which define the dimensions of the rectangle.</li><li><strong>plane_mask</strong> Specifies the plane mask.</li><li><strong>format</strong> Specifies the format for the image. You can pass <strong>XYPixmap</strong> or <strong>ZPixmap</strong> .</li></ul>
 
-<h1>Description</h1>
+<h3>Description</h3>
 
 <p>The <code><a href="../X11/Display.html#get_image%28d%3AX11%3A%3AC%3A%3ADrawable%2Cx%3AInt32%2Cy%3AInt32%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cplane_mask%3AUInt64%2Cformat%3AInt32%29%3AImage-instance-method">#get_image</a></code> function returns an Image object.
 This object provides you with the contents of the specified rectangle of the drawable in the format you specify.
@@ -1047,14 +1873,14 @@ The pointer cursor image is not included in the returned contents. If a problem 
 
 <p><code><a href="../X11/Display.html#get_image%28d%3AX11%3A%3AC%3A%3ADrawable%2Cx%3AInt32%2Cy%3AInt32%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cplane_mask%3AUInt64%2Cformat%3AInt32%29%3AImage-instance-method">#get_image</a></code> can generate <strong>BadDrawable</strong> , <strong>BadMatch</strong> , and <strong>BadValue</strong> errors.</p>
 
-<h1>Diagnostic</h1>
+<h3>Diagnostic</h3>
 
 <ul><li><strong>BadDrawable</strong> A value for a <code><a href="../X11/C/Drawable.html">Drawable</a></code> argument does not name a defined <code><a href="../X11/C/Window.html">Window</a></code> or <code><a href="../X11/C/Pixmap.html">Pixmap</a></code>.</li><li><strong>BadMatch</strong> An <code><a href="../X11/C.html#InputOnly">InputOnly</a></code> window is used as a <code><a href="../X11/C/Drawable.html">Drawable</a></code>.</li><li><strong>BadMatch</strong> Some argument or pair of arguments has the correct type and range but fails to match in some other way required by the request.</li><li><strong>BadValue</strong> Some numeric value falls outside the range of values accepted by the request. Unless a specific range is specified for an argument, the full range defined by the argument's type is accepted. Any argument defined as a set of alternatives can generate this error.</li></ul></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L125" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L127" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1069,11 +1895,11 @@ The pointer cursor image is not included in the returned contents. If a problem 
       
         <div class="doc"><p>Updates <code>dest_image</code> with the specified subimage in the same manner as #get_image.</p>
 
-<h1>Arguments</h1>
+<h3>Arguments</h3>
 
 <ul><li><strong>d</strong> Specifies the drawable.</li><li><strong>x</strong>, <strong>y</strong> Specify the <em>x</em> and <em>y</em> coordinates, which are relative to the origin of the drawable and define the upper-left corner of the rectangle.</li><li><strong>width</strong>, <strong>height</strong> Specify the <em>width</em> and <em>height</em> of the subimage, which define the dimensions of the rectangle.</li><li><strong>plane_mask</strong> Specifies the plane mask.</li><li><strong>format</strong> Specifies the format for the image. You can pass <strong>XYPixmap</strong> or <strong>ZPixmap</strong>.</li><li><strong>dest_image</strong> Specifies the destination image.</li><li><strong>dest_x</strong>, <strong>dest_y</strong> Specify the <em>x</em> and <em>y</em> coordinates, which are relative to the origin of the destination rectangle, specify its upper-left corner, and determine where the subimage is placed in the destination image.</li></ul>
 
-<h1>Description</h1>
+<h3>Description</h3>
 
 <p>The <code><a href="../X11/Display.html#get_sub_image%28d%3AX11%3A%3AC%3A%3ADrawable%2Cx%3AInt32%2Cy%3AInt32%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cplane_mask%3AUInt64%2Cformat%3AInt32%2Cdest_image%3AImage%2Cdest_x%3AInt32%2Cdest_y%3AInt32%29%3AImage-instance-method">#get_sub_image</a></code> function updates <code>dest_image</code> with the specified subimage in the same manner as <code><a href="../X11/Display.html#get_image%28d%3AX11%3A%3AC%3A%3ADrawable%2Cx%3AInt32%2Cy%3AInt32%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cplane_mask%3AUInt64%2Cformat%3AInt32%29%3AImage-instance-method">#get_image</a></code>.
 If the <code>format</code> argument is <strong>XYPixmap</strong>, the image contains only the bit planes you passed to the <code>plane_mask</code> argument.
@@ -1095,14 +1921,46 @@ If a problem occurs, <code><a href="../X11/Display.html#get_sub_image%28d%3AX11%
 
 <p><code><a href="../X11/Display.html#get_sub_image%28d%3AX11%3A%3AC%3A%3ADrawable%2Cx%3AInt32%2Cy%3AInt32%2Cwidth%3AUInt32%2Cheight%3AUInt32%2Cplane_mask%3AUInt64%2Cformat%3AInt32%2Cdest_image%3AImage%2Cdest_x%3AInt32%2Cdest_y%3AInt32%29%3AImage-instance-method">#get_sub_image</a></code> can generate <strong>BadDrawable</strong>, <strong>BadGC</strong>, <strong>BadMatch</strong>, and <strong>BadValue</strong> errors.</p>
 
-<h1>Diagnostics</h1>
+<h3>Diagnostics</h3>
 
 <ul><li><strong>BadDrawable</strong> A value for a <em>Drawable</em> argument does not name a defined <em>Window</em> or <em>Pixmap</em>.</li><li><strong>BadGC</strong> A value for a <em>GContext</em> argument does not name a defined <em>GContext</em>.</li><li><strong>BadMatch</strong> An <em>InputOnly</em> window is used as a <em>Drawable</em>.</li><li><strong>BadMatch</strong> Some argument or pair of arguments has the correct type and range but fails to match in some other way required by the request.</li><li><strong>BadValue</strong> Some numeric value falls outside the range of values accepted by the request. Unless a specific range is specified for an argument, the full range defined by the argument's type is accepted. Any argument defined as a set of alternatives can generate this error.</li></ul></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L167" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L169" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hosts:Array&#40;HostAddress&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>hosts</strong> : Array(HostAddress)
+
+        <a class="method-permalink" href="#hosts%3AArray%28HostAddress%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L784" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="installed_colormaps&#40;w:Window&#41;:Array&#40;Colormap&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>installed_colormaps</strong>(w : <a href="../X11/C/Window.html">Window</a>) : Array(<a href="../X11/C/Colormap.html">Colormap</a>)
+
+        <a class="method-permalink" href="#installed_colormaps%28w%3AWindow%29%3AArray%28Colormap%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L753" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1115,11 +1973,13 @@ If a problem occurs, <code><a href="../X11/Display.html#get_sub_image%28d%3AX11%
         <a class="method-permalink" href="#intern_atom%28atom_name%3AString%2Conly_if_exists%3ABool%29-instance-method">#</a>
       </div>
       
-        <div class="doc"><h1>Arguments</h1>
+        <div class="doc"><p>Returns the atom identifier.</p>
 
-<ul><li><strong>display</strong> Specifies the connection to the X server.</li><li><strong>atom_name</strong> Specifies the <em>name</em> associated with the atom you want returned.</li><li><strong>only_if_exists</strong> Specifies a <code>Bool</code> value that indicates whether the atom must be created.</li></ul>
+<h3>Arguments</h3>
 
-<h1>Description</h1>
+<ul><li><strong>atom_name</strong> Specifies the <em>name</em> associated with the atom you want returned.</li><li><strong>only_if_exists</strong> Specifies a <code>Bool</code> value that indicates whether the atom must be created.</li></ul>
+
+<h3>Description</h3>
 
 <p><code><a href="../X11/Display.html#intern_atom%28atom_name%3AString%2Conly_if_exists%3ABool%29-instance-method">#intern_atom</a></code> function returns the atom identifier associated with the specified <code><a href="../X11/Display.html#atom_name%28atom%3AAtom%7CX11%3A%3AC%3A%3AAtom%29%3AString-instance-method">#atom_name</a></code> string.
 If <code>only_if_exists</code> is <strong>false</strong>, the atom is created if it does not exist.
@@ -1130,7 +1990,7 @@ It will become undefined only when the last connection to the X server closes.</
 
 <p><code><a href="../X11/Display.html#intern_atom%28atom_name%3AString%2Conly_if_exists%3ABool%29-instance-method">#intern_atom</a></code> can generate <strong>BadAlloc</strong> and <strong>BadValue</strong> errors.</p>
 
-<h1>Diagnostics</h1>
+<h3>Diagnostics</h3>
 
 <ul><li><strong>BadAlloc</strong> The server failed to allocate the requested source or server memory.</li><li><strong>BadValue</strong> Some numeric value falls outside the range of values accepted by the request.
 Unless a specific range is specified for an argument, the full range defined by the argument's type is accepted.
@@ -1139,7 +1999,81 @@ Any argument defined as a set of alternatives can generate this error.</li></ul>
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L312" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L317" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="keyboard_mapping&#40;first_keycode:X11::C::KeyCode,keycode_count:Int32&#41;:Array&#40;KeySym&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>keyboard_mapping</strong>(first_keycode : <a href="../X11/C/KeyCode.html">X11::C::KeyCode</a>, keycode_count : Int32) : Array(<a href="../X11/C/KeySym.html">KeySym</a>)
+
+        <a class="method-permalink" href="#keyboard_mapping%28first_keycode%3AX11%3A%3AC%3A%3AKeyCode%2Ckeycode_count%3AInt32%29%3AArray%28KeySym%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L793" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="keycode_to_keysym&#40;keycode:X11::C::KeyCode,index:Int32&#41;:X11::C::KeySym-instance-method">
+      <div class="signature">
+        
+        def <strong>keycode_to_keysym</strong>(keycode : <a href="../X11/C/KeyCode.html">X11::C::KeyCode</a>, index : Int32) : <a href="../X11/C/KeySym.html">X11::C::KeySym</a>
+
+        <a class="method-permalink" href="#keycode_to_keysym%28keycode%3AX11%3A%3AC%3A%3AKeyCode%2Cindex%3AInt32%29%3AX11%3A%3AC%3A%3AKeySym-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L787" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="load_font&#40;name:String&#41;:X11::X::Font-instance-method">
+      <div class="signature">
+        
+        def <strong>load_font</strong>(name : String) : X11::X::Font
+
+        <a class="method-permalink" href="#load_font%28name%3AString%29%3AX11%3A%3AX%3A%3AFont-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Loads the specified font</p>
+
+<h3>Arguments</h3>
+
+<ul><li><strong>name</strong> Specifies the name of the font, which is a string.</li></ul>
+
+<h3>Description</h3>
+
+<p>The <code><a href="../X11/Display.html#load_font%28name%3AString%29%3AX11%3A%3AX%3A%3AFont-instance-method">#load_font</a></code> function loads the specified font and returns its
+associated font ID. If the font name is not in the Host Portable Character Encoding,
+the result is implementation dependent. Use of uppercase or lowercase does not matter.
+When the characters <code></code>?'' and <code></code><em>'' are used in a font name, a pattern match
+is performed and any matching font is used. In the pattern, the <code></code>?'' character
+will match any single character, and the <code></code></em>'' character will match any number of characters.
+A structured format for font names is specified in the X Consortium standard
+<strong>X Logical Font Description Conventions</strong>. If <code><a href="../X11/Display.html#load_font%28name%3AString%29%3AX11%3A%3AX%3A%3AFont-instance-method">#load_font</a></code> was unsuccessful at loading the specified font,
+a <strong>BadName</strong> error results. Fonts are not associated with a particular
+screen and can be stored as a component of any <code>GC</code>.
+When the font is no longer needed, call <code>unload_font</code>.</p>
+
+<p><code><a href="../X11/Display.html#load_font%28name%3AString%29%3AX11%3A%3AX%3A%3AFont-instance-method">#load_font</a></code> can generate <strong>BadAlloc</strong> and <strong>BadName</strong> errors.</p>
+
+<h3>Diagnostics</h3>
+
+<ul><li><strong>BadAlloc</strong> The server failed to allocate the requested source or server memory.</li><li><strong>BadName</strong> A font or color of the specified name does not exist.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L518" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1152,14 +2086,49 @@ Any argument defined as a set of alternatives can generate this error.</li></ul>
         <a class="method-permalink" href="#load_query_font%28name%3AString%29%3AFontStruct-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>The load_query_font function provides the most common way for accessing a font.
-load_query_font both opens (loads) the specified font and returns a FontStruct object.
-<em>name</em> Specifies the name of the font.</p></div>
+        <div class="doc"><p>The <code><a href="../X11/Display.html#load_query_font%28name%3AString%29%3AFontStruct-instance-method">#load_query_font</a></code> function provides the most common way for accessing a font.
+load_query_font both opens (loads) the specified font and returns a <code><a href="../X11/FontStruct.html">FontStruct</a></code> object.</p>
+
+<h3>Arguments</h3>
+
+<p><em>name</em> Specifies the name of the font.</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L57" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="lock-instance-method">
+      <div class="signature">
+        
+        def <strong>lock</strong>
+
+        <a class="method-permalink" href="#lock-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L828" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="lookup_keysym&#40;key_event:KeyEvent,index:Int32&#41;:X11::C::KeySym-instance-method">
+      <div class="signature">
+        
+        def <strong>lookup_keysym</strong>(key_event : KeyEvent, index : Int32) : <a href="../X11/C/KeySym.html">X11::C::KeySym</a>
+
+        <a class="method-permalink" href="#lookup_keysym%28key_event%3AKeyEvent%2Cindex%3AInt32%29%3AX11%3A%3AC%3A%3AKeySym-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L790" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1175,7 +2144,23 @@ load_query_font both opens (loads) the specified font and returns a FontStruct o
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L339" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L850" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_request_size:Int64-instance-method">
+      <div class="signature">
+        
+        def <strong>max_request_size</strong> : Int64
+
+        <a class="method-permalink" href="#max_request_size%3AInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L800" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1193,7 +2178,23 @@ load_query_font both opens (loads) the specified font and returns a FontStruct o
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L81" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L83" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="motion_buffer_size:UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>motion_buffer_size</strong> : UInt64
+
+        <a class="method-permalink" href="#motion_buffer_size%3AUInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L820" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1215,7 +2216,7 @@ If the stop time is in the future, it is equivalent to specifying <em>CurrentTim
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L73" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1231,7 +2232,7 @@ If the stop time is in the future, it is equivalent to specifying <em>CurrentTim
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L347" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L858" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1247,7 +2248,23 @@ If the stop time is in the future, it is equivalent to specifying <em>CurrentTim
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L343" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L854" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="properties&#40;w:X11::C::Window&#41;:Array&#40;Atom|X11::C::Atom&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>properties</strong>(w : <a href="../X11/C/Window.html">X11::C::Window</a>) : Array(<a href="../X11/Atom.html">Atom</a> | <a href="../X11/C/Atom.html">X11::C::Atom</a>)
+
+        <a class="method-permalink" href="#properties%28w%3AX11%3A%3AC%3A%3AWindow%29%3AArray%28Atom%7CX11%3A%3AC%3A%3AAtom%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L781" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1260,14 +2277,30 @@ If the stop time is in the future, it is equivalent to specifying <em>CurrentTim
         <a class="method-permalink" href="#query_font%28font_id%3AX11%3A%3AC%3A%3AXID%29%3AFontStruct-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>The query_font function returns a FontStruct object, which contains information associated with the font.
-You can query a font or the font stored in a GC. The <em>font_id</em> stored in the FontStruct object will be the GContext ID,
-and you need to be careful when using this ID in other functions (see g_context_from_gc).</p></div>
+        <div class="doc"><p>The <code><a href="../X11/Display.html#query_font%28font_id%3AX11%3A%3AC%3A%3AXID%29%3AFontStruct-instance-method">#query_font</a></code> function returns a <code><a href="../X11/FontStruct.html">FontStruct</a></code> object, which contains information associated with the font.
+You can query a font or the font stored in a <code>GC</code>. The <em>font_id</em> stored in the <code><a href="../X11/FontStruct.html">FontStruct</a></code> object will be the <code><a href="../X11/C/GContext.html">GContext</a></code> ID,
+and you need to be careful when using this ID in other functions (see <code>g_context_from_gc</code>).</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L62" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L64" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resource_manager_string:String-instance-method">
+      <div class="signature">
+        
+        def <strong>resource_manager_string</strong> : String
+
+        <a class="method-permalink" href="#resource_manager_string%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L808" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1283,7 +2316,7 @@ and you need to be careful when using this ID in other functions (see g_context_
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L369" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L880" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1299,7 +2332,41 @@ and you need to be careful when using this ID in other functions (see g_context_
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L335" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L846" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="selection_owner&#40;selection:Atom|X11::C::Atom&#41;:Window-instance-method">
+      <div class="signature">
+        
+        def <strong>selection_owner</strong>(selection : <a href="../X11/Atom.html">Atom</a> | <a href="../X11/C/Atom.html">X11::C::Atom</a>) : <a href="../X11/C/Window.html">Window</a>
+
+        <a class="method-permalink" href="#selection_owner%28selection%3AAtom%7CX11%3A%3AC%3A%3AAtom%29%3AWindow-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns the selection owner.</p>
+
+<h3>Arguments</h3>
+
+<ul><li><strong>display</strong> Specifies the connection to the X server.</li><li><strong>selection</strong> Specifies the selection atom whose owner you want returned.</li></ul>
+
+<h3>Description</h3>
+
+<p>The <code><a href="../X11/Display.html#selection_owner%28selection%3AAtom%7CX11%3A%3AC%3A%3AAtom%29%3AWindow-instance-method">#selection_owner</a></code> function returns the window ID associated with
+the window that currently owns the specified selection. If no selection was
+specified, the function returns the constant <code><a href="../X11/C.html#None">None</a></code>. If <code><a href="../X11/C.html#None">None</a></code> is returned, there is no owner for the selection.</p>
+
+<p><code><a href="../X11/Display.html#selection_owner%28selection%3AAtom%7CX11%3A%3AC%3A%3AAtom%29%3AWindow-instance-method">#selection_owner</a></code> can generate a <strong>BadAtom</strong> error.</p>
+
+<h3>Diagnostics</h3>
+
+<ul><li><strong>BadAtom</strong> A value for an <code><a href="../X11/Atom.html">Atom</a></code> argument does not name a defined <code><a href="../X11/Atom.html">Atom</a></code>.</li></ul></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L692" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1315,7 +2382,7 @@ and you need to be careful when using this ID in other functions (see g_context_
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L357" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L868" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1331,7 +2398,41 @@ and you need to be careful when using this ID in other functions (see g_context_
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L361" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L872" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_unsafe:X11::C::X::PDisplay-instance-method">
+      <div class="signature">
+        
+        def <strong>to_unsafe</strong> : <a href="../X11/C/X/PDisplay.html">X11::C::X::PDisplay</a>
+
+        <a class="method-permalink" href="#to_unsafe%3AX11%3A%3AC%3A%3AX%3A%3APDisplay-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Pointer to the underlieing XDisplay object.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L897" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unlock-instance-method">
+      <div class="signature">
+        
+        def <strong>unlock</strong>
+
+        <a class="method-permalink" href="#unlock-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L833" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1347,7 +2448,7 @@ and you need to be careful when using this ID in other functions (see g_context_
       <br/>
       <div>
         
-          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/8082b2df4fbbd9d535f09d9b293cab59e16a628d/src/x11/display.cr#L381" target="_blank">View source</a>]
+          [<a href="https://github.com/TamasSzekeres/x11-cr/blob/af9c46f71ca9f59ca4ab61f9db9856cce11ccaa0/src/x11/display.cr#L892" target="_blank">View source</a>]
         
       </div>
     </div>
